@@ -14,8 +14,8 @@ This report aggregates sales data based on individual products (product_id). It 
 - **product_id**: The unique identifier for the product. (Source: `order_items` table)
 - **product_name**: The name of the product. (Source: Join between `order_items` and `products` tables)
 - **product_category**: The category to which the product belongs. (Source: `products` table)
-- **qty_sold_of_product**: The frequency of products sold in orders. (Source: Join between `order_items` and `products` tables)
-- **total_amount_of_product**: The total sales amount for the product. (Source: Join between `order_items` and `products` tables)
+- **qty_sold_of_product**: The frequency of products sold in orders. (Source: Join  `order_items` and `products` tables)
+- **total_amount_of_product**: The total sales amount for the product. (Source: Join  `order_items` and `products` tables)
 
 ### 2. `report_monthly_orders_product_category_agg.sql`
 This report aggregates sales data based on product categories. It provides a summary of sales at the category level, including the sales frequency and total sales amount for each category.
@@ -24,8 +24,8 @@ This report aggregates sales data based on product categories. It provides a sum
 - **order_year**: The year when the order was created. (Source: `order_items` table)
 - **order_month**: The month when the order was created, represented in full month names (e.g., "January"). (Source: `order_items` table)
 - **product_category**: The category to which the product belongs. (Source: `products` table)
-- **qty_sold_of_category**: Frequency of categories sold in each order  (Source: Join between `order_items` and `products` tables)
-- **total_amount_of_category**: The total sales amount for the category. (Source: Join between `order_items` and `products` tables)
+- **qty_sold_of_category**: Frequency of categories sold in each order  (Source: Join  `order_items` and `products` tables)
+- **total_amount_of_category**: The total sales amount for the category. (Source: Join  `order_items` and `products` tables)
 
 
 

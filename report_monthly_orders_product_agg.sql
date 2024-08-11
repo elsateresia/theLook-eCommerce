@@ -35,10 +35,10 @@ FROM
 CREATE TEMPORARY TABLE `bigquery-public-data.thelook_ecommerce.report_monthly_orders_product_agg` AS
 -- Membuat Tabel Sementara: Baris ini membuat sebuah tabel sementara (temporary table) bernama 
 -- report_monthly_orders_product_agg di dalam dataset bigquery-public-data.thelook_ecommerce. 
--- Tabel sementara ini hanya akan ada selama sesi saat ini dan akan dihapus secara otomatis setelah sesi berakhir.
+-- Tabel sementara ini hanya akan ada selama sesi tertentu.
 WITH product_sales AS (
 -- Pendefinisian CTE (Common Table Expression): Bagian ini mendefinisikan sebuah CTE bernama product_sales yang akan 
--- digunakan untuk menyederhanakan kueri utama. CTE ini digunakan untuk menyusun data penjualan produk bulanan.
+-- digunakan untuk menyederhanakan kueri utama. Tujuan CTE ini untuk menyusun data penjualan produk bulanan.
     SELECT
         EXTRACT(YEAR FROM oi.created_at) AS order_year,
         FORMAT_TIMESTAMP('%B', oi.created_at) AS order_month,
@@ -56,7 +56,7 @@ WITH product_sales AS (
         COUNT(oi.id) AS qty_sold_of_product,
         SUM(oi.sale_price) AS total_amount_of_product
 -- Menghitung Kuantitas Terjual dan Jumlah Penjualan:
--- COUNT(oi.id) AS qty_sold_of_product: Menghitung jumlah produk yang terjual (frekuensi) dalam setiap bulan dan menamainya qty_sold_of_product.
+-- COUNT(oi.id) AS qty_sold_of_product: Menghitung frekuensi produk  terjual (frekuensi) dalam setiap bulan dan menamainya qty_sold_of_product.
 -- SUM(oi.sale_price) AS total_amount_of_product: Menjumlahkan harga jual (sale_price) untuk produk tersebut dalam setiap bulan dan menamainya total_amount_of_product.
     FROM
         `bigquery-public-data.thelook_ecommerce.order_items` AS oi

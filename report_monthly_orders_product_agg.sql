@@ -1,4 +1,5 @@
-CREATE TEMPORARY TABLE report_monthly_orders_product_agg AS
+
+CREATE TEMPORARY TABLE `bigquery-public-data.thelook_ecommerce.report_monthly_orders_product_agg` AS
 WITH product_sales AS (
     SELECT
         EXTRACT(YEAR FROM oi.created_at) AS order_year,

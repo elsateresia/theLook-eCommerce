@@ -7,6 +7,7 @@ Reports Overview
 1. report_monthly_orders_product_agg.sql
 This report aggregates sales data based on individual products (product_id). It provides a detailed breakdown of sales by product, including the quantity sold and total sales amount.
 Features of the Table:
+
   a. order_year: The year when the order was created. (Source: order_items table)
 
   b. order_month: The month when the order was created, represented in full month names (e.g., "January"). (Source: order_items table)
@@ -20,6 +21,7 @@ Features of the Table:
   f. qty_sold_of_product: The frequency (quantity) of the product sold in each order. (Source: Join between order_items and products tables.)
   
   g. total_amount_of_product: The total sales amount for the product. (Source: Join between order_items and products tables.)
+  
 
 3. report_monthly_orders_product_category_agg.sql
 This report aggregates sales data based on product categories. It provides a summary of sales at the category level, including the quantity sold and total sales amount for each category.

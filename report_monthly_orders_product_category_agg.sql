@@ -47,7 +47,7 @@ WITH category_sales AS (
         COUNT(oi.id) AS qty_sold_of_category,
         SUM(oi.sale_price) AS total_amount_of_category
 -- Menghitung Kuantitas Terjual dan Jumlah Penjualan untuk Kategori:
--- COUNT(oi.id) AS qty_sold_of_category: Menghitung jumlah produk yang terjual dalam setiap kategori dan menamainya qty_sold_of_category.
+-- COUNT(oi.id) AS qty_sold_of_category: Menghitung frekuensi kategori dalam penjualan dan menamainya qty_sold_of_category.
 -- SUM(oi.sale_price) AS total_amount_of_category: Menjumlahkan harga jual (sale_price) untuk produk dalam setiap kategori dan menamainya total_amount_of_category.
     FROM
         `bigquery-public-data.thelook_ecommerce.order_items` AS oi

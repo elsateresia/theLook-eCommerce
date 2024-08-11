@@ -14,7 +14,7 @@ This report aggregates sales data based on individual products (product_id). It 
 - **product_id**: The unique identifier for the product. (Source: `order_items` table)
 - **product_name**: The name of the product. (Source: Join between `order_items` and `products` tables)
 - **product_category**: The category to which the product belongs. (Source: `products` table)
-- **qty_sold_of_product**: The frequency of the product sold in each order. (Source: Join between `order_items` and `products` tables)
+- **qty_sold_of_product**: The frequency of products sold in orders. (Source: Join between `order_items` and `products` tables)
 - **total_amount_of_product**: The total sales amount for the product. (Source: Join between `order_items` and `products` tables)
 
 ### 2. `report_monthly_orders_product_category_agg.sql`
